@@ -1,8 +1,14 @@
 # Face Mask Detector using live cam
 
+
+
 ## Live cam을 통한 실내외 Mask Detection
 
+```
 💡팀 구성 : AI developer 4
+```
+
+
 
 
 
@@ -14,6 +20,8 @@
 
 
 
+
+
 ### Object
 
 📌 Live cam을 통해 마스크 착용 유무를 Bounding Box와 Class를 **실시간**으로 출력하는 작업 수행
@@ -21,6 +29,8 @@
 ✔️ AI Object Detection Training Part
 
 ✔️ Real time Classification developing Part
+
+
 
 
 
@@ -36,6 +46,8 @@
 
 
 
+
+
 ### Model
 
 📌 Using faster-RCNN
@@ -43,6 +55,8 @@
 ✔️ Fast-RCNN -> faster-RCNN
 
 ✔️ROI Pooling -> Class Classification
+
+
 
 
 
