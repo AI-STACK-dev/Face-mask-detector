@@ -8,7 +8,7 @@
 💡팀 구성 : AI developer 4
 ```
 
-![](https://github.com/hwanseung2/Image-processing/blob/main/img/pytorch-logo.png)
+![](https://github.com/hwanseung2/Image_processing/blob/main/img/pytorch-logo.png)
 
 
 
