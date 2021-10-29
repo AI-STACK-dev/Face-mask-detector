@@ -70,7 +70,7 @@ So, we devised a Face Mask Detector. Based on Livecam, it automatically detects 
 
 
 3. Train your own model with `./src/train.ipynb`  
- or you can use trained model [here](https://github.com/AI-STACK-dev/Face-mask-detector/blob/main/trained_model.pth)
+ Or you can use trained model [here](https://github.com/AI-STACK-dev/Face-mask-detector/blob/main/trained_model.pth)
 
 
 4. Inference
