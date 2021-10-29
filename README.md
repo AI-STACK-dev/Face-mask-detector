@@ -9,9 +9,9 @@ Model architecture, model training, pipeline, etc. were referenced from other gr
 
 - Capable of predicting muliple faces
 - 3 types of results    
-    - <span style="color:green">with mask</span>
-    - <span style="color:yellow">mask weared incorrect</span>
-    - <span style="color:red">without mask</span>
+    - <span style="color:green"> with mask </span>
+    - <span style="color:yellow"> mask weared incorrect </span>
+    - <span style="color:red"> without mask </span>
 
 Team Members:  
 **Hyuntaek Shin, Hwanseung Yoo, Jin Ryu, Seungun Jang**
@@ -36,7 +36,7 @@ So, we devised a Face Mask Detector. Based on Livecam, it automatically detects 
 ## Results
 
 <div align="center">
-  <img src="./img/img1.png" width="448">
+  <img src="./img/img1.png">
 </div>
 
 ## Dependencies
