@@ -81,6 +81,8 @@ So, we devised a Face Mask Detector. Based on Livecam, it automatically detects 
 - Long hair is recognized as a black mask 
 - Accuracy varies with distance
 
+
+
 ## External code and References
 
 This project would not have been possible without following great resources.
@@ -88,6 +90,10 @@ This project would not have been possible without following great resources.
 - [jahnavi-prasad's face-mask-detection](https://github.com/jahnavi-prasad/face-mask-detection) 
 - [daniel601's kaggle notebook](https://www.kaggle.com/daniel601/pytorch-fasterrcnn)
 
+
+
 ## License
 
 This repository is licensed under the MIT License
+
+
