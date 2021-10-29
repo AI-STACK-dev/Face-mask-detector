@@ -1,69 +1,89 @@
-# Face Mask Detector using live cam
+<h1 align="center">
+    <p>Real-time Face Mask Detector using Webcam</p>
+</h1>
+
+This project is real-time face mask detection using webcam. 
+
+It performs face mask detection and classification on the live cam stream using the FasterRCNN model trained on the [Kaggle dataset](https://www.kaggle.com/andrewmvd/face-mask-detection). Training and execution of CNN models is based on PyTorch.
+Model architecture, model training, pipeline, etc. were referenced from other great resources. The codes referenced are summarized below.
+
+- Capable of predicting muliple faces
+- 3 types of results    
+    - <span style="color:green">with mask</span>
+    - <span style="color:yellow">mask weared incorrect</span>
+    - <span style="color:red">without mask</span>
+
+Team Members:  
+**Hyuntaek Shin, Hwanseung Yoo, Jin Ryu, Seungun Jang**
+
+## Objectives
+Now that we live in the era of COVID-19, the importance of wearing a mask in our daily life has already been emphasized several times. According to a paper in the international journal Lancet, wearing a mask correctly can reduce the risk of infection by more than 85%.
+
+So, we devised a Face Mask Detector. Based on Livecam, it automatically detects whether people are wearing masks or not. Thus, it can utilize to warn people who do not wear the mask or who use the mask improperly to wear it correctly.
+
+## Data
+- [kaggle Face Mask Detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection)
+    - 853 pngs & xmls
+    - approximately 7:4:1 for with mask, without mask, mask weared incorrect
+- To resolve data imbalance between labels, we added additional images obtained by crawling.
+    - add 180 **mask weared incorrect** pngs & xmls
+
+## Method
+- Model architecture: FasterRCNN
+- The Number of traing epochs : 25
+- Learning Rate : 1e-2
+- Optimization method : SGD
+## Results
+
+<div align="center">
+  <img src="./img/img1.png" width="448">
+</div>
+
+## Dependencies
+- Python 3.6+
+- PyTorch 1.7.0+
+- imutils
+- necessary CUDA packages
+
+## Getting started
+
+1. Clone this repository
+    ```
+    # Install git-lfs
+    curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+    sudo apt install git-lfs
+
+    # Clone repository
+    git clone https://github.com/AI-STACK-dev/Face-mask-detector.git
+    cd Face-mask-detector
+    ```
+2. Donwload data from [kaggle](https://www.kaggle.com/andrewmvd/face-mask-detection)
+
+    * If you want to review data use `./src/data_review.ipynb`
 
 
-
-## Live cam을 통한 실내외 Mask Detection
-
-```
-💡팀 구성 : AI developer 4
-```
-
-![](https://github.com/hwanseung2/Image_processing/blob/main/img/pytorch.png)
+3. Train your own model with `./src/train.ipynb`  
+ or you can use trained model here `./trained_model.pth`
 
 
-
-코로나 19시대에 살고 있는 지금, 일상생활에서 마스크 착용의 중요성은 이미 수차례 강조되었다. 국제 학술지 Lancet의 논문에 따르면 올바르게 마스크를 착용할 경우 감염의 위험을 **85%** 이상 감소시킬 수 있다고 한다. 하지만 우리가 주목해야할 점은 실내에서의 마스크 착용이다. 우리는 실외에서보다 사무실, 작업장, 식당, 카페, 술집 등과 같은 실내에서 마스크를 벗는 일이 많다. 실내에서는 실외에서보다 2m이상 거리 유지가 힘들고 밀폐돼 있는 경우가 많으니 **감염 위험성은 당연히 더 높다.** 또한 마스크를 입에만 걸치거나 턱에만 걸치는 등 마스크를 제대로 쓰지 않는 경우도 많다. 마스크를 제대로 쓰지 않는다면 감염 예방효과가 없기에 제대로 쓰는 것은 굉장히 중요하다.
-
-
-
-이런 상황에서 우리는 Face Mask Detector를 고안하였다. 이는 **Livecam**을 기반으로 카페나 식당과 같은 다중이용시설에 들어오는 사람들을 대상으로 마스크 착용여부를 자동으로 탐지한다. 그리하여 마스크를 미착용하거나, 입에만 걸치거나 턱에만 걸치는 등 마스크를 부적절하게 사용한 사람들에게 정확하게 착용할 것을 권고한다. 이는 직원들이 일일이 출입하는 인원을 통제하는 수고를 덜 수 있을 것이다.
+4. Inference
+    ```
+    python inference.py --model "/your/trained/model/path/model.pth"
+    ```
 
 
+## Future works
 
+- Long hair is recognized as a black mask 
+- Accuracy varies with distance
 
+## External code and References
 
-### Object
+This project would not have been possible without following great resources.
 
-📌 Live cam을 통해 마스크 착용 유무를 Bounding Box와 Class를 **실시간**으로 출력하는 작업 수행
+- [jahnavi-prasad's face-mask-detection](https://github.com/jahnavi-prasad/face-mask-detection) 
+- [daniel601's kaggle notebook](https://www.kaggle.com/daniel601/pytorch-fasterrcnn)
 
-✔️ AI Object Detection Training Part
+## License
 
-✔️ Real time Classification developing Part
-
-
-
-
-
-### Dataset
-
-📌 Using Kaggle Open Dataset
-
-✔️ Total : 853 Image, Class Imbalance
-
-✔️ with mask : without mask : mask weared incorrect = 7 : 4 : 1
-
-✔️ adding mask weared incorrect in Google Image and Personal Image with annotating(.xml)
-
-
-
-
-
-### Model
-
-📌 Using faster-RCNN
-
-✔️ Fast-RCNN -> faster-RCNN
-
-✔️ROI Pooling -> Class Classification
-
-
-
-
-
-### Future Work
-
-🔍 얼굴의 정면은 대부분 실시간으로 잘 예측되지만 머리카락을 마스크로 인식하는 경우도 존재 해결
-
-🔍 머리가 길 경우, 검은 색 마스크로 인식되어 Bounding Box가 생기는 문제 해결
-
-🔍 거리에 따라 Accuracy가 달라지는 문제 해결 
+This repository is licensed under the MIT License
