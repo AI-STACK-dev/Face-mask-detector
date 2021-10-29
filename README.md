@@ -9,12 +9,13 @@ Model architecture, model training, pipeline, etc. were referenced from other gr
 
 - Capable of predicting muliple faces
 - 3 types of results  
-        🟢 **with mask**  
-        🟡 **mask weared incorrect**  
-        🔴 **without mask** 
+
+        🟢 with mask  
+        🟡 mask weared incorrect  
+        🔴 without mask 
 
 Team Members:  
-**Hyuntaek Shin, Hwanseung Yoo, Jin Ryu, Seungun Jang**
+    **Hyuntaek Shin, Hwanseung Yoo, Jin Ryu, Seungun Jang**
 
 ## Objectives
 Now that we live in the era of COVID-19, the importance of wearing a mask in our daily life has already been emphasized several times. According to a paper in the international journal Lancet, wearing a mask correctly can reduce the risk of infection by more than 85%.
@@ -31,11 +32,13 @@ So, we devised a Face Mask Detector. Based on Livecam, it automatically detects 
     - add 180 **mask weared incorrect** pngs & xmls
 
 ## Method
+
 - Model architecture: FasterRCNN
 - The Number of traing epochs : 25
 - Learning Rate : 1e-2
 - Optimization method : SGD
-- 
+
+
 ## Results
 
 <div align="center">
