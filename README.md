@@ -8,10 +8,10 @@ It performs face mask detection and classification on the live cam stream using 
 Model architecture, model training, pipeline, etc. were referenced from other great resources. The codes referenced are summarized below.
 
 - Capable of predicting muliple faces
-- 3 types of results    
-    - <span style="color:green"> with mask </span>
-    - <span style="color:yellow"> mask weared incorrect </span>
-    - <span style="color:red"> without mask </span>
+- 3 types of results  
+        🟢 **with mask**  
+        🟡 **mask weared incorrect**  
+        🔴 **without mask** 
 
 Team Members:  
 **Hyuntaek Shin, Hwanseung Yoo, Jin Ryu, Seungun Jang**
@@ -22,9 +22,11 @@ Now that we live in the era of COVID-19, the importance of wearing a mask in our
 So, we devised a Face Mask Detector. Based on Livecam, it automatically detects whether people are wearing masks or not. Thus, it can utilize to warn people who do not wear the mask or who use the mask improperly to wear it correctly.
 
 ## Data
-- [kaggle Face Mask Detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection)
+
+- [Kaggle Face Mask Detection dataset](https://www.kaggle.com/andrewmvd/face-mask-detection)
     - 853 pngs & xmls
     - approximately 7:4:1 for with mask, without mask, mask weared incorrect
+ 
 - To resolve data imbalance between labels, we added additional images obtained by crawling.
     - add 180 **mask weared incorrect** pngs & xmls
 
@@ -33,6 +35,7 @@ So, we devised a Face Mask Detector. Based on Livecam, it automatically detects 
 - The Number of traing epochs : 25
 - Learning Rate : 1e-2
 - Optimization method : SGD
+- 
 ## Results
 
 <div align="center">
@@ -40,6 +43,7 @@ So, we devised a Face Mask Detector. Based on Livecam, it automatically detects 
 </div>
 
 ## Dependencies
+
 - Python 3.6+
 - PyTorch 1.7.0+
 - imutils
